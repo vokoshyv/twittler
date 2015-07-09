@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="jquery.js"></script>
+    <script src="data_generator.js"></script>
+    <link rel="stylesheet" type="text/css" href="twittler.css">
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400'>
+  </head>
+  <body>
+    <header id="header">
+      
+      <h1 class="logo">
+        <a href="index.html" id="color1">Twittler</a>
+      </h1>
+      <div id="content">
+        <img src="images\pusheen_computer.gif" class="ribbon">
+      </div>
+      
+      <h3 class="tagline">Follow your favorite Twit!</h3>
+
+      <div class="line"></div>
+
+      <nav class="nav primary-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li><!--
+          --><li><a href="twits.html">Twits</a></li><!--
+          --><li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+
+    </header>
+
+
+    <div id="container">
+
+      <!--This is where the new twoots appear-->
+      <div id="center" class="column">
+        <h2>New twoots</h3>
+        <div class="twoots">
+          <a class="new_twoot"></a>
+        </div>
+      </div>
+
+      <!--This is where I'll put the Twits (slane for Tweeter);
+          paying homage to Roald Dahl-->
+      <div id="left" class="column">
+        <h2>Users</h2>
+        <button type="button" onclick="show_user_twoots('shawndrost_button')" class="button" id="shawndrost">@shawndrost</button>
+        <button type="button" onclick="show_user_twoots('sharksforcheap_button')" class="button" id="sharksforcheap">@sharksforcheap</button>
+        <button type="button" onclick="show_user_twoots('mracus_button')" class="button" id="mracus">@mracus</button>
+        <button type="button" onclick="show_user_twoots('douglascalhoun_button')" class="button" id="douglascalhoun">@douglascalhoun</button>
+        <button type="button"  onclick="show_user_twoots('clear')" class="button" id="clear_user">Clear Users</button>
+      </div>
+
+      <!--I'll put navigation over here-->
+      <div id="right" class="column">
+        <h2>User Twoots</h2>
+        <div class="users">
+          <a class="shawndrost" id="shawndrost_button"></a>
+          <a class="sharksforcheap" id="sharksforcheap_button"></a>
+          <a class="mracus" id="mracus_button"></a>
+          <a class="douglascalhoun" id="douglascalhoun_button"></a>
+        </div>
+      </div>
+    </div>
+
+
+    <div id="footer">
+
+      <small>&copy; Twittler</small>
+      
+      <nav class="nav">
+        <ul>
+          <li><a href="index.html">Home</a></li><!--
+          --><li><a href="twits.html">Twits</a></li><!--
+          --><li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+    
+    </div>
+
+
+      <script>
+
+        //function for showing individual user's twoots
+        var show_user_twoots = function(elementid){
+          document.getElementById('shawndrost_button').style.display = 'none';
+          document.getElementById('sharksforcheap_button').style.display = 'none';
+          document.getElementById('mracus_button').style.display = 'none';
+          document.getElementById('douglascalhoun_button').style.display = 'none';
+          switch(elementid){
+            case 'shawndrost_button':
+              document.getElementById('shawndrost_button').style.display = 'block';
+              break;
+            case 'sharksforcheap_button':
+              document.getElementById('sharksforcheap_button').style.display = 'block';
+              break;
+            case 'mracus_button':
+              document.getElementById('mracus_button').style.display = 'block';
+              break;
+            case 'douglascalhoun_button':
+              document.getElementById('douglascalhoun_button').style.display = 'block';
+              break;
+          }
+        }
+
+
+        $(document).ready(function(){
+            var $twoots = $('div.twoots a.new_twoot');
+            var $date = $('div.twoots a.date');
+            var $time = $('div.twoots a.time');
+            var $shawndrost = $('div.users a.shawndrost');
+            var $sharksforcheap = $('div.users a.sharksforcheap');
+            var $mracus = $('div.users a.mracus');
+            var $douglascalhoun = $('div.users a.douglascalhoun');
+
+
+            var index = 0;
+            var previous_twoot;
+
+            //function for distributing twoots to spcific users
+            var distribute = function(time, date, twoot, user){
+              time.appendTo(user);
+              date.appendTo(user);
+              twoot.appendTo(user);
+            }
+
+
+            
+
+            //while loop to display initial twoots
+            while(index <= streams.home.length - 1){
+
+
+              //Adding a Sprite
+
+
+              //Timestamping the post
+              var d = new Date();
+              var $time_data = $('<a class="time"></a>');
+              var $time_data_duo = $('<a class="time"></a>');
+              if (d.getMinutes().toString().length < 2){
+                var minutes = "0" + d.getMinutes().toString();
+              }else{var minutes = d.getMinutes().toString();}
+              if (d.getSeconds().toString().length < 2){
+                var seconds = "0" + d.getSeconds().toString();
+              }else{var seconds = d.getSeconds().toString();}
+              $time_data.text(d.getHours() + ":" + minutes + ":" + seconds);
+              $time_data_duo.text(d.getHours() + ":" + minutes + ":" + seconds);
+              $time_data.appendTo($twoots);
+
+              //Datestamping the post
+              var d = new Date();
+              var $date_data = $('<a class="date"></a>');
+              var $date_data_duo = $('<a class="date"></a>');
+              $date_data.text(d.getMonth()+1 + "/" + d.getDate() + "/" + d.getFullYear());
+              $date_data_duo.text(d.getMonth()+1 + "/" + d.getDate() + "/" + d.getFullYear());
+              $date_data.appendTo($twoots);
+
+              //Pulling the twoot
+              var tweet = streams.home[index];
+              var $tweet = $('<a class="message"></a>');
+              var $tweet_duo = $('<a class="message"></a>');
+              $tweet.text('@' + tweet.user + ': ' + tweet.message);
+              $tweet_duo.text('@' + tweet.user + ': ' + tweet.message);
+              $tweet.appendTo($twoots);
+
+              //Distributing twoots to individual user pages 
+              if (streams.home[index].user === "shawndrost"){
+                distribute($time_data_duo, $date_data_duo, $tweet_duo, $shawndrost);
+              }
+              else if (streams.home[index].user === "sharksforcheap"){
+                distribute($time_data_duo, $date_data_duo, $tweet_duo, $sharksforcheap)
+              }
+              else if (streams.home[index].user === "mracus"){
+                distribute($time_data_duo, $date_data_duo, $tweet_duo, $mracus)
+              }
+              else if (streams.home[index].user === "douglascalhoun"){
+                distribute($time_data_duo, $date_data_duo, $tweet_duo, $douglascalhoun)
+              }
+
+
+              index += 1;
+              previous_twoot = tweet.user + tweet.message;
+            }
+
+            //function that checks whenever a new twoot is created
+            setInterval(function(){
+              var last_item = streams.home.length-1;
+              var tweet = streams.home[last_item];
+              var $tweet = $('<a class="message"></a>');
+              var $tweet_duo = $('<a class="message"></a>');
+              $tweet.text('@' + tweet.user + ': ' + tweet.message);
+              $tweet_duo.text('@' + tweet.user + ': ' + tweet.message);
+
+              //Only add new tweets, not repeat messages
+              if (previous_twoot !== (tweet.user + tweet.message)){
+                
+
+                //Timestamping the post
+                var d = new Date();
+                var $time_data = $('<a class="time"></a>');
+                var $time_data_duo = $('<a class="time"></a>');
+                if (d.getMinutes().toString().length < 2){
+                  var minutes = "0" + d.getMinutes().toString();
+                }else{var minutes = d.getMinutes().toString();}
+                if (d.getSeconds().toString().length < 2){
+                  var seconds = "0" + d.getSeconds().toString();
+                }else{var seconds = d.getSeconds().toString();}
+                $time_data.text(d.getHours() + ":" + minutes + ":" + seconds);
+                $time_data_duo.text(d.getHours() + ":" + minutes + ":" + seconds);
+                $time_data.appendTo($twoots);
+
+                //Datestamping the post
+                var d = new Date();
+                var $date_data = $('<a class="date"></a>');
+                var $date_data_duo = $('<a class="date"></a>');
+                $date_data.text(d.getMonth()+1 + "/" + d.getDate() + "/" + d.getFullYear());
+                $date_data_duo.text(d.getMonth()+1 + "/" + d.getDate() + "/" + d.getFullYear());
+                $date_data.appendTo($twoots);
+
+                $tweet.appendTo($twoots);
+                  previous_twoot = tweet.user + tweet.message;
+
+                //Distributing twoots to individual user pages 
+                if (streams.home[last_item].user === "shawndrost"){
+                  distribute($time_data_duo, $date_data_duo, $tweet_duo, $shawndrost);
+                }
+                else if (streams.home[last_item].user === "sharksforcheap"){
+                  distribute($time_data_duo, $date_data_duo, $tweet_duo, $sharksforcheap)
+                }
+                else if (streams.home[last_item].user === "mracus"){
+                  distribute($time_data_duo, $date_data_duo, $tweet_duo, $mracus)
+                }
+                else if (streams.home[last_item].user === "douglascalhoun"){
+                  distribute($time_data_duo, $date_data_duo, $tweet_duo, $douglascalhoun)
+                }
+              }
+
+            }, 1)
+            // this function continually adds on twoots whenever a 
+            // new one is generated
+
+
+        });
+
+      </script>
+
+      
+
+  </body>
+</html>

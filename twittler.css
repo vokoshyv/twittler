@@ -1,0 +1,507 @@
+ http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+
+
+body {
+  min-width: 800px;      /* 2x LC width + RC width */
+  background: #DED4B9;
+}
+#container {
+  padding-left: 200px;   /* LC width */
+  padding-right: 400px;  /* RC width */
+}
+#container .column {
+  position: relative;
+  float: left;
+}
+#center {
+  width: 100%;
+  margin-top: 50px;
+  background: none;
+}
+#left {
+  width: 200px;          /* LC width */
+  right: 200px;          /* LC width */
+  margin-left: -100%;
+  margin-top: 50px;
+  /*background: #A3B6C5;*/
+  padding-bottom: 172px;
+}
+#right {
+  width: 400px;          /* RC width */
+  margin-right: -400px;  /* RC width */
+  margin-top: 50px;
+  background: none;
+}
+#footer {
+  clear: both;
+}
+.footer_bottom {
+	width:100%;
+	height:80px;
+	position:absolute;
+	bottom:0;
+	left:0;
+}
+
+/*
+  ========================================
+  Latest Twoots
+  ========================================
+*/
+h2 {
+	margin-bottom: 20px;
+	text-align: center;
+	text-transform: uppercase;
+	margin-left: 0px;
+	color: #CE534D;
+	display: block;
+	font-size: 40px;
+}
+h5 {
+	color: #333333;
+	margin-left: 100px;
+}
+.twoots {
+	height: 400px;
+	overflow-y: scroll;
+	margin-bottom: 30px;
+}
+.twoots a {
+	transform: rotate(180deg);
+	display: block;
+}
+.new_twoot {
+	background: none;
+	margin-top: 0px;
+}
+
+/*
+  ========================================
+  Text Styling
+  ========================================
+*/
+
+.logo {
+	display: block;
+	background: none;
+	font-size: 70px;
+	margin-top: 25px;
+	margin-left: 30px;
+	margin-bottom: 0px;
+	letter-spacing: .5px;
+	text-transform: uppercase;
+	padding: 0px;
+	font-weight: 800;
+}
+.logo a {
+	margin: 0;
+	padding: 0;
+	display: inline;
+	text-decoration: none;
+}
+#color1 {
+	color: #46433A;
+}
+
+.tagline {
+	color: #46433A;
+	display: block;
+	margin-left: 70px;
+	margin-bottom: 0px;
+}
+.nav {
+	display: block;
+	float: right;
+	margin-bottom: 10px;
+}
+.nav li {
+	display: inline;
+	text-transform: uppercase;
+	word-spacing: 20px;
+}
+.nav a {
+	margin-right: 50px;
+	text-decoration: none;
+	color: #46433A;
+	font-size: 15px;
+	font-weight: 800;
+}
+
+/*
+  ========================================
+  Individual User Twoots
+  ========================================
+*/
+
+.users {
+	height: 400px;
+	overflow-y: scroll;
+	margin-bottom: 30px;
+}
+.users a {
+	transform: rotate(180deg);
+	display: block;
+	margin-left: 50px;
+}
+a.shawndrost{
+	background: none;
+	display: none;
+}
+a.sharksforcheap{
+	background: none;
+	display: none;
+}
+a.mracus{
+	background: none;
+	display: none;
+}
+a.douglascalhoun{
+	background: none;
+	display: none;
+}
+
+
+/*
+  ========================================
+  Individual Twoots
+  ========================================
+*/
+.date {
+	color: #46433A;
+	text-align: right;
+	margin-left: 30px;
+	padding-right: 95px;
+	border-left: 1px solid grey;
+	border-right: 1px solid grey;
+	background: #64B6B1;
+}
+.time {
+	color: #46433A;
+	text-align: right;
+	margin-top: 40px;
+	margin-left: 30px;
+	padding-right: 100px;
+	border-bottom: 1px solid grey;
+	border-left: 1px solid grey;
+	border-right: 1px solid grey;
+	border-bottom-right-radius: 25px;
+	border-bottom-left-radius: 25px;
+	background: #64B6B1;
+}
+.message {
+	color: #46433A;
+	text-align: center;
+	margin-left: 30px;
+	border-top: 1px solid grey;
+	border-left: 1px solid grey;
+	border-right: 1px solid grey;
+	border-top-right-radius: 25px;
+	border-top-left-radius: 25px;
+	background: #64B6B1;
+}
+
+a.shawndrost .message, 
+a.shawndrost .time {
+	color: white;
+	background: #113F8C;
+}
+a.shawndrost .date {
+	color: white;
+	background: #01A4A4;
+}
+
+a.sharksforcheap .message,
+a.sharksforcheap .time{
+	color: white;
+	background: #61AE24;
+}
+a.sharksforcheap .date {
+	color: white;
+	background: #D0D102;
+}
+
+a.mracus .message,
+a.mracus .time{
+	color: white;
+	background: #D70060;
+}
+a.mracus .date {
+	color: white;
+	background: #32742C;
+}
+
+a.douglascalhoun .message,
+a.douglascalhoun .time{
+	color: white;
+	background: #F18D05;
+}
+a.douglascalhoun .date {
+	color: white;
+	background: #E54028;
+}
+
+h3 {
+	display: inline;
+	text-align; right;
+}
+
+/*
+  ========================================
+  Buttons
+  ========================================
+*/
+
+
+/*shawndrost button*/
+.button#shawndrost {
+   border-top: 1px solid #96d1f8;
+   background: #65a9d7;
+   background: -webkit-gradient(linear, left top, left bottom, from(#113e8c), to(#65a9d7));
+   background: -webkit-linear-gradient(top, #113e8c, #65a9d7);
+   background: -moz-linear-gradient(top, #113e8c, #65a9d7);
+   background: -ms-linear-gradient(top, #113e8c, #65a9d7);
+   background: -o-linear-gradient(top, #113e8c, #65a9d7);
+   padding: 5px 10px;
+   -webkit-border-radius: 8px;
+   -moz-border-radius: 8px;
+   border-radius: 8px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: white;
+   font-size: 14px;
+   font-family: Georgia, Serif;
+   text-decoration: none;
+   vertical-align: middle;
+   }
+.button#shawndrost:hover {
+   border-top-color: #01a4a4;
+   background: #01a4a4;
+   color: #ccc;
+   }
+.button#shawndrost:active {
+   border-top-color: #0a234f;
+   background: #0a234f;
+   }
+
+/*sharksforcheap button*/
+.button#sharksforcheap {
+   border-top: 1px solid #92c964;
+   background: #7fc447;
+   background: -webkit-gradient(linear, left top, left bottom, from(#62ae24), to(#7fc447));
+   background: -webkit-linear-gradient(top, #62ae24, #7fc447);
+   background: -moz-linear-gradient(top, #62ae24, #7fc447);
+   background: -ms-linear-gradient(top, #62ae24, #7fc447);
+   background: -o-linear-gradient(top, #62ae24, #7fc447);
+   padding: 5px 10px;
+   -webkit-border-radius: 8px;
+   -moz-border-radius: 8px;
+   border-radius: 8px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: white;
+   font-size: 14px;
+   font-family: Georgia, serif;
+   text-decoration: none;
+   vertical-align: middle;
+   }
+.button#sharksforcheap:hover {
+   border-top-color: #d1d102;
+   background: #d1d102;
+   color: #221526;
+   }
+.button#sharksforcheap:active {
+   border-top-color: #305412;
+   background: #305412;
+   }
+
+/*mracus button*/
+.button#mracus {
+   border-top: 1px solid #96d1f8;
+   background: #d6008b;
+   background: -webkit-gradient(linear, left top, left bottom, from(#d70061), to(#d6008b));
+   background: -webkit-linear-gradient(top, #d70061, #d6008b);
+   background: -moz-linear-gradient(top, #d70061, #d6008b);
+   background: -ms-linear-gradient(top, #d70061, #d6008b);
+   background: -o-linear-gradient(top, #d70061, #d6008b);
+   padding: 5px 10px;
+   -webkit-border-radius: 8px;
+   -moz-border-radius: 8px;
+   border-radius: 8px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: white;
+   font-size: 14px;
+   font-family: Georgia, serif;
+   text-decoration: none;
+   vertical-align: middle;
+   }
+.button#mracus:hover {
+   border-top-color: #32742c;
+   background: #616161;
+   color: #ccc;
+   }
+.button#mracus:active {
+   border-top-color: #540026;
+   background: #540026;
+   }
+
+/*douglascalhoun button*/
+.button#douglascalhoun {
+   border-top: 1px solid #96d1f8;
+   background: #e3a656;
+   background: -webkit-gradient(linear, left top, left bottom, from(#f18f05), to(#e3a656));
+   background: -webkit-linear-gradient(top, #f18f05, #e3a656);
+   background: -moz-linear-gradient(top, #f18f05, #e3a656);
+   background: -ms-linear-gradient(top, #f18f05, #e3a656);
+   background: -o-linear-gradient(top, #f18f05, #e3a656);
+   padding: 5px 10px;
+   -webkit-border-radius: 8px;
+   -moz-border-radius: 8px;
+   border-radius: 8px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: white;
+   font-size: 14px;
+   font-family: Georgia, serif;
+   text-decoration: none;
+   vertical-align: middle;
+   }
+.button#douglascalhoun:hover {
+   border-top-color: #e54228;
+   background: #e54228;
+   color: #ccc;
+   }
+.button#douglascalhoun:active {
+   border-top-color: #965603;
+   background: #965603;
+   }
+
+/*clear_user button*/
+.button#clear_user {
+   border-top: 1px solid #96d1f8;
+   background: #453c51;
+   background: -webkit-gradient(linear, left top, left bottom, from(#2c1d30), to(#453c51));
+   background: -webkit-linear-gradient(top, #2c1d30, #453c51);
+   background: -moz-linear-gradient(top, #2c1d30, #453c51);
+   background: -ms-linear-gradient(top, #2c1d30, #453c51);
+   background: -o-linear-gradient(top, #2c1d30, #453c51);
+   padding: 5px 10px;
+   -webkit-border-radius: 8px;
+   -moz-border-radius: 8px;
+   border-radius: 8px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: white;
+   font-size: 14px;
+   font-family: Georgia, serif;
+   text-decoration: none;
+   vertical-align: middle;
+   }
+.button#clear_user:hover {
+   border-top-color: #e0e0ea;
+   background: #e0e0ea;
+   color: #050305;
+   }
+.button#clear_user:active {
+   border-top-color: #221526;
+   background: #221526;
+   }
+.button {
+	margin-bottom: 25px;
+}
+/*
+  ========================================
+  Decorations
+  ========================================
+*/
+
+.line {
+	display: block;
+	float left;
+	border-top: solid 10px #46433A;
+	width: 100%;
+	margin-top: 20px;
+	padding: 0;
+}
+#content {
+  position:relative;
+}
+.ribbon {
+  position:absolute;
+  top:-80px;
+  right: 10px;
+  width: 15%;
+}
+.push_one,
+.push_two,
+.push_three,
+.push_four {
+	display: inline;
+	margin-left: 50px;
+}
+
+.pusheen_lines {
+	display: block;
+	margin-bottom: 30px;
+}
+.pusheen {
+	display: inline;
+}
